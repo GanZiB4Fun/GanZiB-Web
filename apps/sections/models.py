@@ -24,7 +24,7 @@ class Sections(db.Model):
     book_id = db.Column(db.Integer, db.Sequence('book_id'), autoincrement=True)
     title = db.Column(db.String(255))
     content = db.Column(db.String(255))
-    section_order = db.Column(db.Integer(255))
+    section_order = db.Column(db.Integer())
     section_url = db.Column(db.String(255), primary_key=True)
     book_name = db.Column(db.String(255))
     path = db.Column(db.String(255))

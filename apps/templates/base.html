@@ -18,6 +18,17 @@
         {% endif %}
     {% endblock %}
 </div>
+<div id="search">
+    {% block search %}
+        <form id="search_form" action="/search/book" method="post">
+            <label><font style="color:#a94442" size="2">小说名：</font></label>
+            <input id="book_name" name="book_name"><br/>
+            <div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </div>
+        </form>
+    {% endblock %}
+</div>
 <div id="content">
     {% block content %}
     {% endblock %}
