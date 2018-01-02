@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}注册{% endblock %}
+{% block content %}
+    <form id="ff" action="/user/register" method='POST'>
+        <div >
+            <label><font style="color:#a94442" size="2">用户名：</font></label>
+            <input  id="name" name="name">
+            <label><font style="color:#a94442" size="2">邮  箱：</font></label>
+            <input  id="email" name="email">
+            <label><font style="color:#a94442" size="2">密  码：</font></label>
+            <input type="password" id="pwd" name="pwd">
+        </div>
+        <div >
+            <button type="submit" class="btn btn-default">确认</button>
+        </div>
+    </form>
+{% endblock %}

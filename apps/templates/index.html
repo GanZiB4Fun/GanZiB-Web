@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}首页{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+
+    </style>
+{% endblock %}
+<h1>首页</h1>
+{% block content %}
+    <ul>
+        {% for item in categorys %}
+            <li><a href="/category/{{ item.category_id }}">{{ item.category }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
