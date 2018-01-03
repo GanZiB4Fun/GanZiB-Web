@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div style="align-content: center">
+        <h1><p><span>{{ title }}</span></p></h1>
+        <p>
+            {{ content |safe }}
+        </p>
+
+    </div>
+{% endblock %}
