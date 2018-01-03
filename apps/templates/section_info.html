@@ -4,9 +4,9 @@
     {{ super() }}
 {% endblock %}
 {% block content %}
-    <div style="align-content: center">
-        <h1 style="margin-left: 42%"><p><span>{{ title }}</span></p></h1>
-        <div style="align-content: center;margin-left: 20%">
+    <div>
+        <h1 style="margin-left: 20%"><p><span>{{ title }}</span></p></h1>
+        <div style="align-content: center;margin-left: 20%;font-size: 240%;font-family: 'Microsoft Himalaya'">
             {% if previous_section %}
                 <a href="{{ previous_section }}">上一章</a>
             {% endif %}
@@ -14,14 +14,14 @@
                 <a href="{{ next_section }}">下一章</a>
             {% endif %}
         </div>
-        <div style="align-content: center;margin-left: 10%">
+        <div style="width:80%;height:auto;align-content: center;margin-left: 10%;font-size: 240%;font-family: 'Microsoft Himalaya'">
             <p>
                 {{ content |safe }}
             </p>
         </div>
 
     </div>
-    <div style="align-content: center;margin-left: 20%">
+    <div style="align-content: center;margin-left: 20%;font-size: 240%;font-family: 'Microsoft Himalaya'">
         {% if previous_section %}
             <a href="{{ previous_section }}">上一章</a>
         {% endif %}

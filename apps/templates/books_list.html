@@ -4,9 +4,11 @@
     {{ super() }}
 {% endblock %}
 {% block content %}
-    <ul>
-        {% for book in books %}
-            <li><a href="/book/{{ book.book_id }}">{{ book.book_name }}</a>---<span>{{ book.author }}</span></li>
-        {% endfor %}
-    </ul>
+    <div style="width:80%;height:auto;align-content: center;margin-left: 10%;font-size: 240%;font-family: 'Microsoft Himalaya'">
+        <ul>
+            {% for book in books %}
+                <li><a href="/book/{{ book.book_id }}">{{ book.book_name }}</a>---<span>{{ book.author }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

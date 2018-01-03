@@ -26,6 +26,8 @@ def user_login():
                                                                                          passwords=passwords).first()
         if user:
             session['logged_in'] = True
+            session['user_id'] = user.id
+            session['username'] = user.name
             return redirect('/', code=302)
         else:
             return render_template('404.html')

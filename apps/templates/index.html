@@ -8,9 +8,11 @@
 {% endblock %}
 <h1>首页</h1>
 {% block content %}
-    <ul>
-        {% for item in categorys %}
-            <li><a href="/category/{{ item.category_id }}">{{ item.category }}</a></li>
-        {% endfor %}
-    </ul>
+    <div style="width:80%;height:auto;align-content: center;margin-left: 10%;font-size: 240%;font-family: 'Microsoft Himalaya'">
+        <ul>
+            {% for item in categorys %}
+                <li><a href="/category/{{ item.category_id }}">{{ item.category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
