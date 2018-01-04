@@ -18,7 +18,7 @@ user = Blueprint('user', __name__, url_prefix='/user')
 @user.route('/login', methods=['GET', 'POST'])
 def user_login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('login2.html')
     else:
         username = request.form['name']
         passwords = request.form['pwd']

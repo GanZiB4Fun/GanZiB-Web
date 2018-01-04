@@ -30,12 +30,10 @@ def get_content(book_id, section_order):
             sn.execute("update read_history set section_id =:section_id WHERE history_id =:history_id",
                        {'section_id': section_order, 'history_id': read_history.history_id})
             sn.commit()
-            sn.close()
         else:
             read_history = History(book_id, user_id, section_order)
             sn.add(read_history)
             sn.commit()
-            sn.close()
     if book_id and section_order:
         section_max = sn.query(Sections.section_order).filter(text('book_id=:book_id')).params(book_id=book_id).count()
         result_section = sn.query(Sections).filter(text('book_id=:book_id and section_order=:section_order')).params(
@@ -61,7 +59,8 @@ def get_content(book_id, section_order):
                     content = content + line.replace("\n", '<br/>')
                 fp.close()
                 return render_template('section_info.html', title=title, content=content, next_section=next_section,
-                                       previous_section=previous_section)
+                                       previous_section=previous_section, book_id=book_id,
+                                       book_name=result_section.book_name)
         else:
             return render_template('404.html')
     else:
