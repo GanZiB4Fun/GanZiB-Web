@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/register.css') }}">
+    <script src="{{ url_for('static', filename='jQuery/jquery-3.2.1.js') }}"></script>
+</head>
+
+<body>
+<div class="registerBg">
+    <!---container-->
+    <div class="container">
+
+        <div class="photograph">
+            <span><img src="{{ url_for('static',filename='images/ganzib2.png') }}"
+                       style="width: 179%;margin: -2.65em 0 0 -2.68em;" alt="个人头像"
+                       class="photographImg"></span>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon"><img alt="登录"
+                                                 src="{{ url_for('static',filename='images/account.png') }}"></span>
+            <input type="text" id="username" class="form-control" placeholder="用户名/邮箱登录">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><img alt="密码" src="{{ url_for('static',filename='images/password.png') }}"></span>
+            <input type="text" id="pwd" class="form-control" placeholder="密码输入">
+        </div>
+
+        <input type="button" class="btn btn-default btn-block" name="submit2" value="登录"/>
+
+        <div class="onceWord">
+            <a href="#"><span class="once">立即注册</span></a>
+            <a href="#"><span class="forget">忘记密码？</span></a>
+        </div>
+
+        <div class="register-a">
+            <span class="register-aa"></span>
+            <span class="register-ab">使用第三方账号登录</span>
+            <span class="register-ac"></span>
+        </div>
+
+        <div class="register-a">
+            {#            <a href="#"><img src="{{ url_for('static',filename='images/weixin.png') }}" alt="微信"#}
+            {#                             class="register-ad"></a>#}
+            <a href="#"><img src="{{ url_for('static',filename='images/login_wb.png') }}" alt="微博" class="register-ad"></a>
+            <a href="#"><img src="{{ url_for('static',filename='images/login_qq.png') }}" alt="QQ"></a>
+        </div>
+
+
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+    $(function ($) {
+        $('input[name=submit2]').on('click', function (e) {
+            var username = $("input#username").val();
+            var passwords = $("input#pwd").val();
+            console.info(username)
+            $.ajax({
+                url: "/user/login",
+                dataType: 'html',
+                method: 'POST',
+                data: {
+                    name: username,
+                    pwd: passwords
+                },
+                success: function (data) {
+                    window.location.href = "/";
+                },
+                error: function (xhr) {
+                    // 导致出错的原因较多，以后再研究
+                    alert('error:' + JSON.stringify(xhr));
+                }
+            })
+        });
+    });
+</script>
+</html>

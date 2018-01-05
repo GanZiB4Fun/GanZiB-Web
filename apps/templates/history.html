@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div style="width:80%;height:auto;align-content: center;margin-left: 10%;font-size: 240%;font-family: 'Microsoft Himalaya'">
+        <ul>
+            {% for section in sections %}
+                <li>
+                    <a href="/section/{{ section.book_id }}/{{ section.section_order }}">{{ section.book_name }}--------{{ section.title }}</a></span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
