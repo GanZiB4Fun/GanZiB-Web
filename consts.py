@@ -11,10 +11,16 @@ from sqlalchemy.orm import sessionmaker
 
 HOSTNAME = 'localhost'
 DATABASE = 'r'
-USERNAME = 'root'
+# 家
+# USERNAME = 'root'
+# PASSWORD = 'root'
+# 公司
 # USERNAME = 'web'
-PASSWORD = 'root'
 # PASSWORD = 'web'
+# 阿里云
+USERNAME = 'root'
+PASSWORD = 'ganzib'
+
 DB_URI = 'mysql://{}:{}@{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, DATABASE)
 
 eng = create_engine(DB_URI, connect_args={'charset': 'utf8'})

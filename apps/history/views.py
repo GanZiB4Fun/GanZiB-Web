@@ -25,4 +25,4 @@ def get_history_list(user_id):
             book_id=i.book_id, section_order=i.section_id).first()
         section_list.append(section)
 
-    return render_template('history.html', sections=section_list, title='阅读历史')
+    return render_template('xiaoshuo/history.html', sections=section_list, title='阅读历史')

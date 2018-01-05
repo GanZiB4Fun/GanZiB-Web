@@ -21,4 +21,5 @@ def get_book_by_id(book_id=1):
     result_book = sn.query(Book).filter(text('book_id=:book_id')).params(book_id=book_id).first()
     sections = sn.query(Sections).filter(text('book_id=:book_id')).params(book_id=book_id).order_by(
         'section_order').all()
-    return render_template('section_list.html', book=result_book, sections=sections, title=result_book.book_name)
+    return render_template('xiaoshuo/section_list.html', book=result_book, sections=sections,
+                           title=result_book.book_name)

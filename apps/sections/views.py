@@ -20,20 +20,23 @@ section = Blueprint('section', __name__, url_prefix='/section')
 
 @section.route('/<int:book_id>/<int:section_order>')
 def get_content(book_id, section_order):
-    if session['logged_in']:
-        user_id = session['user_id']
-        history = sn.query(History).filter(text('book_id=:book_id and user_id=:user_id')).params(book_id=book_id,
-                                                                                                 user_id=user_id).first()
-        if history:
-            read_history = History.query.filter(History.user_id == str(user_id),
-                                                History.book_id == str(book_id)).first()
-            sn.execute("update read_history set section_id =:section_id WHERE history_id =:history_id",
-                       {'section_id': section_order, 'history_id': read_history.history_id})
-            sn.commit()
-        else:
-            read_history = History(book_id, user_id, section_order)
-            sn.add(read_history)
-            sn.commit()
+    try:
+        if session['logged_in']:
+            user_id = session['user_id']
+            history = sn.query(History).filter(text('book_id=:book_id and user_id=:user_id')).params(book_id=book_id,
+                                                                                                     user_id=user_id).first()
+            if history:
+                read_history = History.query.filter(History.user_id == str(user_id),
+                                                    History.book_id == str(book_id)).first()
+                sn.execute("update read_history set section_id =:section_id WHERE history_id =:history_id",
+                           {'section_id': section_order, 'history_id': read_history.history_id})
+                sn.commit()
+            else:
+                read_history = History(book_id, user_id, section_order)
+                sn.add(read_history)
+                sn.commit()
+    except KeyError as e:
+        pass
     if book_id and section_order:
         section_max = sn.query(Sections.section_order).filter(text('book_id=:book_id')).params(book_id=book_id).count()
         result_section = sn.query(Sections).filter(text('book_id=:book_id and section_order=:section_order')).params(
@@ -58,7 +61,8 @@ def get_content(book_id, section_order):
                 for line in fp:
                     content = content + line.replace("\n", '<br/>')
                 fp.close()
-                return render_template('section_info.html', title=title, content=content, next_section=next_section,
+                return render_template('xiaoshuo/section_info.html', title=title, content=content,
+                                       next_section=next_section,
                                        previous_section=previous_section, book_id=book_id,
                                        book_name=result_section.book_name)
         else:

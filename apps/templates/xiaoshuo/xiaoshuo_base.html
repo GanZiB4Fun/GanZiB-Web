@@ -19,9 +19,21 @@
             <p style="font-size: 50%;">
                 <a href="/">首页</a>-----
                 欢迎您！ {{ session.username }}
-                ---<a href="/user/logout">登出</a>
+                <a href="/history/list/{{ session.user_id }}">阅读历史</a>---<a href="/user/logout">登出</a>
             </p>
         {% endif %}
+    {% endblock %}
+</div>
+<div id="search"
+     style="align-content: center;margin-left: 20%;font-size: 240%;font-family: 'Microsoft Himalaya';background-color: #efffeb;">
+    {% block search %}
+        <form id="search_form" action="/search/book" method="post">
+            <label><font style="color:#a94442">小说名：</font></label>
+            <input id="book_name" style="width: auto;height: auto;" name="book_name">&nbsp;&nbsp;<button type="submit"
+                                                                                                         class="btn btn-default">
+            搜索
+        </button>
+        </form>
     {% endblock %}
 </div>
 <div id="content">

@@ -17,5 +17,5 @@ search = Blueprint('search', __name__, url_prefix='/search')
 def get_book_by_id():
     book_name = request.form['book_name']
     result_book = sn.query(Book).filter(Book.book_name.like('%' + book_name + '%'))
-    return render_template('book_catalog.html', books=result_book, title="搜索" + book_name,
+    return render_template('xiaoshuo/book_catalog.html', books=result_book, title="搜索" + book_name,
                            search="“" + book_name + "” ")

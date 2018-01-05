@@ -36,7 +36,7 @@ def user_login():
 @user.route('/register', methods=['GET', 'POST'])
 def user_register():
     if request.method == 'GET':
-        return render_template('register.html')
+        return render_template('register2.html')
     elif request.method == 'POST':
         username = request.form['name']
         password = request.form['pwd']

@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper > ul > li {
+    border: 1px solid #f0f0f0;
+    background-color: #FDFDFD;
+    margin-bottom: 1.2rem;
+    padding: 1.1rem;
+    align-content: center;
+
+}
+
+.joke_content {
+    font-size: 3rem;
+    margin-bottom: 0.54rem;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin-top: 8rem;
+}
+
+.author a {
+    color: #4f5157;
+    text-decoration: none
+}
+
+.avatar {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 3.4rem;
+    margin-right: 3.5rem;
+}
+
+.left {
+    float: left !important;
+}
+
+.author-name {
+    padding-top: 1rem;
+    font-size: 3rem;
+    color: #787878;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 70%;
+    display: inline-block;
+}
+
+.page {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+}

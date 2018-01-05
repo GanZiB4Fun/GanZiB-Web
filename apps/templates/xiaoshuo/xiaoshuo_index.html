@@ -1,13 +1,14 @@
-{% extends "base.html" %}
-{% block title %}{{ title }}{% endblock %}
+{% extends "xiaoshuo/xiaoshuo_base.html" %}
+{% block title %}首页{% endblock %}
 {% block head %}
     {{ super() }}
 {% endblock %}
+<h1>首页</h1>
 {% block content %}
     <div style="width:80%;height:auto;align-content: center;margin-left: 10%;font-size: 240%;font-family: 'Microsoft Himalaya'">
         <ul>
-            {% for book in books %}
-                <li><a href="/book/{{ book.book_id }}">{{ book.book_name }}</a>---<span>{{ book.author }}</span></li>
+            {% for item in categorys %}
+                <li><a href="/category/{{ item.category_id }}">{{ item.category }}</a></li>
             {% endfor %}
         </ul>
     </div>

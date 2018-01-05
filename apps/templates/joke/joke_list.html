@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/joke.css') }}"/>
+{% endblock %}
+{% block content %}
+    <div class="wrapper">
+        <ul>
+            {% for item in pagination.items %}
+                <li>
+                    <a class="author">
+                        <img src="{{ item.head_img }}" class="avatar left"/>
+                        <span class="author-name left">{{ item.author }}</span>
+                    </a>
+                    <p class="joke_content">&nbsp;&nbsp;&nbsp;&nbsp;{{ item.content }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div style="text-align: center;font-size: 2rem;">
+        {% if pagination.has_prev %}
+            <a class="page" style="text-decoration:none" href="/joke/list/page/{{ pagination.next_num - 2 }}">上一页</a>
+            <a class="page" style="text-decoration:none" href="/joke/list/page/1">第一页</a>
+        {% endif %}
+        {% if pagination.has_next %}
+            <a class="page" style="text-decoration:none" href="/joke/list/page/{{ pagination.next_num }}">下一页</a>
+        {% endif %}
+    </div>
+{% endblock %}

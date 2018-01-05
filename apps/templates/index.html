@@ -2,17 +2,13 @@
 {% block title %}首页{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-
-    </style>
 {% endblock %}
 <h1>首页</h1>
 {% block content %}
     <div style="width:80%;height:auto;align-content: center;margin-left: 10%;font-size: 240%;font-family: 'Microsoft Himalaya'">
         <ul>
-            {% for item in categorys %}
-                <li><a href="/category/{{ item.category_id }}">{{ item.category }}</a></li>
-            {% endfor %}
+            <li><a href="/category/list" style="text-decoration:none"> 看小说</a></li>
+            <li><a href="/joke/list/page/1" style="text-decoration:none"> 看段子</a></li>
         </ul>
     </div>
 {% endblock %}

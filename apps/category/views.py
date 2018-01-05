@@ -22,4 +22,11 @@ def get_books_by_category_id(category_id=1):
     category_name = category_entry.category
     books = sn.query(Book).filter(text('category=:category and status=:status')).params(category=category_name,
                                                                                         status='YES').all()
-    return render_template('books_list.html', title=category_name + '--小说列表', books=books)
+    return render_template('xiaoshuo/books_list.html', title=category_name + '--小说列表', books=books)
+
+
+@category.route('/list')
+def xiaoshuo_index():
+    categorys = Category.query.getall()
+    return render_template('xiaoshuo/xiaoshuo_index.html',
+                           categorys=categorys, nav_current="index")
