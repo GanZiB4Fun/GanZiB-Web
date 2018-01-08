@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83ae9ad6-867b-44a7-b050-81daf497887d" name="Default" comment="网站登录 页面调整 以及阅读历史">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/static/css/video.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/templates/video/video_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/templates/video/video_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/videos/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/videos/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/videos/views.py" />
+    <list default="true" id="83ae9ad6-867b-44a7-b050-81daf497887d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GanZiB-Web.py" afterPath="$PROJECT_DIR$/GanZiB-Web.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consts.py" afterPath="$PROJECT_DIR$/consts.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,21 +37,29 @@
         <entry file="file://$PROJECT_DIR$/apps/videos/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-              <folding>
-                <element signature="e#163#201#0" expanded="true" />
-              </folding>
+              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/videos/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="644">
               <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#162#206#0" expanded="true" />
+                <marker date="1515265133925" expanded="true" signature="1491:1648" ph="INSERT INTO videos... " />
               </folding>
             </state>
           </provider>
@@ -153,16 +154,6 @@
                 <element signature="e#111007#112974#1" expanded="true" />
                 <element signature="e#113797#114468#1" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="joke_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/templates/joke/joke_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="100" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="100" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -342,19 +333,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\templates\xiaoshuo" />
-      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static\images" />
-      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static\jQuery" />
-      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\templates" />
-      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\templates\joke" />
       <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\templates\xiaoshuo" />
       <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static\css" />
       <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static" />
       <recent name="E:\PythonWorkSpace\GanZiB-Web\apps" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\PyWeb\GanZiB-Web" />
+      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\templates\xiaoshuo" />
+      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static\images" />
+      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\static\jQuery" />
+      <recent name="E:\PythonWorkSpace\GanZiB-Web\apps\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -636,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515116749963</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="视频">
+      <created>1515426654596</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1515426654596</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -656,7 +654,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -686,7 +684,8 @@
     <MESSAGE value="详情页增加 上一页下一页功能" />
     <MESSAGE value="阅读记录" />
     <MESSAGE value="网站登录 页面调整 以及阅读历史" />
-    <option name="LAST_COMMIT_MESSAGE" value="网站登录 页面调整 以及阅读历史" />
+    <MESSAGE value="视频" />
+    <option name="LAST_COMMIT_MESSAGE" value="视频" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -708,7 +707,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/static/jquery-3.2.1.js" />
     <entry file="file://C:/Program Files/Python36/Lib/site-packages/sqlalchemy/orm/query.py" />
     <entry file="file://$PROJECT_DIR$/apps/history/models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1077,10 +1075,8 @@
     <entry file="file://$PROJECT_DIR$/apps/videos/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="e#163#201#0" expanded="true" />
-          </folding>
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,8 +1100,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#162#206#0" expanded="true" />
+            <marker date="1515265133925" expanded="true" signature="1491:1648" ph="INSERT INTO videos... " />
           </folding>
         </state>
       </provider>
