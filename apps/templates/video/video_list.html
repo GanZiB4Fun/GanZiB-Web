@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/video.css') }}"/>
+{% endblock %}
+{% block content %}
+    <div class="">
+        <ul>
+            {% for item in pagination.items %}
+                <li>
+                    <div class="doc doc-video doc-video-tipcal">
+                        <a href="/video/{{ item.video_cd }}" class="clickable" style="display: block;">
+                            <div class="doc-title line-clamp-2">{{ item.title }}</div>
+                            <div href="" class="video-wrapper">
+                                <div class="video video-own">
+                                    <div class="video-cover"
+                                         style="background-image: url({{ item.image_urls }});"></div>
+                                    <div class="video-play img"></div>
+                                    <div class="video-duration">{{ item.publish_date }}</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="keyword-list bottom-1px"><a class="keyword">{{ item.keywords }} </a>
+                            <div class="doc-info bottom-1px">
+                                <div class="source">
+                                    <div class="img"
+                                         style="background-image: url({{ item.head_img }});"></div>
+                                    <div class="name">{{ item.author }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div style="text-align: center;font-size: 2rem;">
+        {% if pagination.has_prev %}
+            <a class="page" style="text-decoration:none" href="/video/list/page/{{ pagination.next_num - 2 }}">上一页</a>
+            <a class="page" style="text-decoration:none" href="/video/list/page/1">第一页</a>
+        {% endif %}
+        {% if pagination.has_next %}
+            <a class="page" style="text-decoration:none" href="/video/list/page/{{ pagination.next_num }}">下一页</a>
+        {% endif %}
+    </div>
+{% endblock %}

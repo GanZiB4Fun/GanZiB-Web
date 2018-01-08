@@ -12,14 +12,14 @@ from sqlalchemy.orm import sessionmaker
 HOSTNAME = 'localhost'
 DATABASE = 'r'
 # 家
-# USERNAME = 'root'
-# PASSWORD = 'root'
+USERNAME = 'root'
+PASSWORD = 'root'
 # 公司
 # USERNAME = 'web'
 # PASSWORD = 'web'
 # 阿里云
-USERNAME = 'root'
-PASSWORD = 'ganzib'
+# USERNAME = 'root'
+# PASSWORD = 'ganzib'
 
 DB_URI = 'mysql://{}:{}@{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, DATABASE)
 
