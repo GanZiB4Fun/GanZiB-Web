@@ -9,7 +9,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-HOSTNAME = 'localhost'
+HOSTNAME = '127.0.0.1'
 DATABASE = 'r'
 # 家
 USERNAME = 'root'

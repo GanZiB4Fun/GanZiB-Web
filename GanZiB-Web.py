@@ -1,4 +1,5 @@
 from apps import app
+from apps.alipay.views import alipay
 from apps.book.views import book
 from apps.category.views import category
 from apps.history.views import history
@@ -18,6 +19,7 @@ app.register_blueprint(section, url_prefix='/section')
 app.register_blueprint(history, url_prefix='/history')
 app.register_blueprint(joke, url_prefix='/joke')
 app.register_blueprint(video, url_prefix='/video')
+app.register_blueprint(alipay, url_prefix='/alipay')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
