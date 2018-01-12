@@ -11,32 +11,29 @@ from apps import db
 
 
 class VideoQuery(BaseQuery):
-	def getall(self):
-		return self.all()
+    def getall(self):
+        return self.all()
 
-	def getcategory_id(self, id):
-		return self.get(id)
+    def getcategory_id(self, id):
+        return self.get(id)
 
 
 class Video(db.Model):
-	__tablename__ = 'videos'
-	query_class = VideoQuery
-	video_cd = db.Column(db.Integer, primary_key=True)
-	video_url = db.Column(db.String(255))
-	title = db.Column(db.String(255))
-	tags = db.Column(db.String(255))
-	keywords = db.Column(db.String(255))
-	image_urls = db.Column(db.String(255))
-	source = db.Column(db.String(255))
-	category = db.Column(db.String(255))
-	author = db.Column(db.String(255))
-	head_img = db.Column(db.String(255))
-	publish_date = db.Column(db.String(255))
+    __tablename__ = 'videos'
+    query_class = VideoQuery
+    video_cd = db.Column(db.String(255), primary_key=True)
+    video_url = db.Column(db.String(255))
+    video_name = db.Column(db.String(255))
+    video_author = db.Column(db.String(255))
+    home_url = db.Column(db.String(255))
+    cover = db.Column(db.String(255))
+    author_cd = db.Column(db.String(255))
+    spider_time = db.Column(db.metadata)
 
 
 def __init__(self, *args, **kwargs):
-	super(Video, self).__init__(*args, **kwargs)
+    super(Video, self).__init__(*args, **kwargs)
 
 
 def __repr__(self):
-	return '<video name %r>' % self.title
+    return '<video name %r>' % self.video_name

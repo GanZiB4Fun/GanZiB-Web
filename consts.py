@@ -12,11 +12,11 @@ from sqlalchemy.orm import sessionmaker
 HOSTNAME = '127.0.0.1'
 DATABASE = 'r'
 # 家
-USERNAME = 'root'
-PASSWORD = 'root'
+# USERNAME = 'root'
+# PASSWORD = 'root'
 # 公司
-# USERNAME = 'web'
-# PASSWORD = 'web'
+USERNAME = 'web'
+PASSWORD = 'web'
 # 阿里云
 # USERNAME = 'root'
 # PASSWORD = 'ganzib'

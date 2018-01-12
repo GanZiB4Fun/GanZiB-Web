@@ -17,12 +17,11 @@ video = Blueprint('video', __name__, url_prefix='/video')
 @video.route('/list/page/<int:page_num>')
 def get_video_list(page_num=1):
     title = '视频'
-    pagination = Video.query.paginate(page=page_num, per_page=10)
+    pagination = Video.query.paginate(page=page_num, per_page=12)
     return render_template('video/video_list.html', pagination=pagination, title=title, )
 
 
 @video.route('/<string:video_cd>')
 def get_video_info(video_cd):
     video_info = sn.query(Video).filter(text('video_cd=:video_cd')).params(video_cd=video_cd).first()
-    content = '<video src="' + video_info.video_url + '" volume="0.5" poster="' + video_info.image_urls + '" controls="" preload="true" playsinline="" webkit-playsinline="webkit-playsinline" x-webkit-airplay="allow"  style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);"></video>'
-    return render_template('video/video_info.html', content=content, video=video_info)
+    return render_template('video/video_info.html', title=video_info.video_name, video=video_info)

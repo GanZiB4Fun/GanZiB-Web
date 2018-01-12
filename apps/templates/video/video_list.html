@@ -2,34 +2,36 @@
 {% block title %}{{ title }}{% endblock %}
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/video.css') }}"/>
+    <style type="text/css">
+        ul {
+            list-style: none;
+            display: inline-block;
+            overflow: auto;
+            margin-left: 7%
+        }
+
+        ul li {
+            display: inline;
+            float: left;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/joke.css') }}"/>
 {% endblock %}
 {% block content %}
-    <div class="">
+    <div class="wrapper" style="text-align: center">
         <ul>
             {% for item in pagination.items %}
-                <li>
-                    <div class="doc doc-video doc-video-tipcal">
-                        <a href="/video/{{ item.video_cd }}" class="clickable" style="display: block;">
-                            <div class="doc-title line-clamp-2">{{ item.title }}</div>
-                            <div href="" class="video-wrapper">
-                                <div class="video video-own">
-                                    <div class="video-cover"
-                                         style="background-image: url({{ item.image_urls }});"></div>
-                                    <div class="video-play img"></div>
-                                    <div class="video-duration">{{ item.publish_date }}</div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="keyword-list bottom-1px"><a class="keyword">{{ item.keywords }} </a>
-                            <div class="doc-info bottom-1px">
-                                <div class="source">
-                                    <div class="img"
-                                         style="background-image: url({{ item.head_img }});"></div>
-                                    <div class="name">{{ item.author }}</div>
-                                </div>
-                            </div>
+                <li style="width: 450px">
+                    <div class="source">
+                        <div>
+                            <video style="width: 400px;height: 300px" src="{{ item.video_url }}"
+                                   poster="{{ item.cover }}" controls="" preload="none"
+                                   playsinline="" webkit-playsinline="webkit-playsinline" x-webkit-airplay="allow"
+                                   style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);"></video>
                         </div>
+                        <div class="name"><input type="text" value="{{ item.video_name }}"/>---{{ item.video_author }}
+                        </div>
+
                     </div>
                 </li>
             {% endfor %}
