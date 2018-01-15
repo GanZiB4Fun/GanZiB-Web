@@ -9,6 +9,7 @@ from apps.search.views import search
 from apps.sections.views import section
 from apps.user.views import user
 from apps.videos.views import video
+from apps.weixin.weixinlogin import weixin
 
 app.register_blueprint(index, url_prefix='/')
 app.register_blueprint(user, url_prefix='/user')
@@ -20,6 +21,7 @@ app.register_blueprint(history, url_prefix='/history')
 app.register_blueprint(joke, url_prefix='/joke')
 app.register_blueprint(video, url_prefix='/video')
 app.register_blueprint(alipay, url_prefix='/alipay')
+app.register_blueprint(weixin, url_prefix='/weixin')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=80)

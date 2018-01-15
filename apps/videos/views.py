@@ -18,7 +18,7 @@ video = Blueprint('video', __name__, url_prefix='/video')
 def get_video_list(page_num=1):
     title = '视频'
     pagination = Video.query.paginate(page=page_num, per_page=12)
-    return render_template('video/video_list.html', pagination=pagination, title=title, )
+    return render_template('video/video_list.html', pagination=pagination, title=title)
 
 
 @video.route('/<string:video_cd>')
