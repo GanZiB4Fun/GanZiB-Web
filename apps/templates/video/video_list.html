@@ -29,7 +29,9 @@
                                    playsinline="" webkit-playsinline="webkit-playsinline" x-webkit-airplay="allow"
                                    style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);"></video>
                         </div>
-                        <div class="name"><input type="text" value="{{ item.video_name }}"/>---{{ item.video_author }}
+                        <div class="name"><a title="{{ item.video_name }}">
+                            <div style="width:100px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis">{{ item.video_name }}</div>
+                            ></a>---{{ item.video_author }}
                         </div>
 
                     </div>
@@ -39,11 +41,11 @@
     </div>
     <div style="text-align: center;font-size: 2rem;">
         {% if pagination.has_prev %}
-            <a class="page" style="text-decoration:none" href="/video/list/page/{{ pagination.next_num - 2 }}">上一页</a>
+            <a class="page" style="text-decoration:none" href="/video/list/page/{{ pagination.page - 1 }}">上一页</a>
             <a class="page" style="text-decoration:none" href="/video/list/page/1">第一页</a>
         {% endif %}
         {% if pagination.has_next %}
-            <a class="page" style="text-decoration:none" href="/video/list/page/{{ pagination.next_num }}">下一页</a>
+            <a class="page" style="text-decoration:none" href="/video/list/page/{{ pagination.page + 1 }}">下一页</a>
         {% endif %}
     </div>
 {% endblock %}
